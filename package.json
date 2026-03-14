@@ -1,7 +1,7 @@
 {
-  "name": "template-repo",
+  "name": "weather-app",
   "version": "1.0.0",
-  "description": "This is the repository that holds all the setup code for the projects I work on.",
+  "description": "",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IamBull8905/template-repo.git"
+    "url": "git+https://github.com/IamBull8905/weather-app.git"
   },
   "bugs": {
-    "url": "https://github.com/IamBull8905/template-repo/issues"
+    "url": "https://github.com/IamBull8905/weather-app/issues"
   },
-  "homepage": "https://github.com/IamBull8905/template-repo#readme",
+  "homepage": "https://iambull8905.github.io/weather-app/",
   "keywords": [],
   "author": "",
   "license": "ISC",
