@@ -76,10 +76,7 @@ async function getWeatherData(location) {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=QXFQ32SYB6Y32T7ABNSDCUC3V`,
     );
     const weatherData = await response.json();
-    console.log(weatherData);
-    console.log(GetCurrentConditions(weatherData));
-    console.log(GetHourlyReport(weatherData));
-    console.log(GetDailyReport(weatherData));
+    return weatherData;
   } catch (error) {
     console.error(error);
   }
