@@ -8,6 +8,7 @@ function GetCurrentConditions(weatherData) {
   const sunset = currentWeather.sunset;
   const temperature = currentWeather.temp;
   const wind = currentWeather.windspeed;
+  const icon = currentWeather.icon;
   return {
     conditions,
     feelsLike,
@@ -17,6 +18,7 @@ function GetCurrentConditions(weatherData) {
     sunset,
     temperature,
     wind,
+    icon,
   };
 }
 
@@ -31,6 +33,7 @@ function GetHourlyReport(weatherData) {
     const precipitationChance = hour.precipprob;
     const temperature = hour.temp;
     const wind = hour.windspeed;
+    const icon = hour.icon;
     const hourData = {
       conditions,
       time,
@@ -39,6 +42,7 @@ function GetHourlyReport(weatherData) {
       precipitationChance,
       temperature,
       wind,
+      icon,
     };
     displayHours.push(hourData);
   }
@@ -56,6 +60,7 @@ function GetDailyReport(weatherData) {
     const sunset = day.sunset;
     const maxTemp = day.tempmax;
     const minTemp = day.tempmin;
+    const icon = day.icon;
     const dayData = {
       conditions,
       date,
@@ -64,16 +69,17 @@ function GetDailyReport(weatherData) {
       sunset,
       maxTemp,
       minTemp,
+      icon,
     };
     displayDays.push(dayData);
   }
   return displayDays;
 }
 
-async function getWeatherData(location) {
+async function getWeatherData(location, unit) {
   try {
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=QXFQ32SYB6Y32T7ABNSDCUC3V`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=QXFQ32SYB6Y32T7ABNSDCUC3V`,
     );
     const weatherData = await response.json();
     return weatherData;
